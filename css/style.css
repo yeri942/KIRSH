@@ -8,15 +8,22 @@
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
     display: none;
+} */
+main {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow: auto;
 }
 /* 메인탑 */
 .main_warp {
     width: 100%;
-    height: 100vh;
     cursor: pointer;
     overflow: hidden;
+    position: relative;
+    height: 100vh;
+    scroll-snap-align: center;
 }
 .main_warp::-webkit-scrollbar {
     display: none;
@@ -37,13 +44,15 @@
     transition-duration: 0.1s;
 }
 
-#content {
+/* 콘텐츠 */
+.contentblock {
+    height: 100vh;
+    scroll-snap-align: center;
     display: none;
-    background-color: rgb(0 91 127 / 30%);
 }
-
+/* 인트로 */
 .intro_wrap {
-    background: radial-gradient(#ffffff, transparent);
+    background: radial-gradient(#ffffff, #005b7f4d);
     height: 70vh;
     padding: 15vh;
     overflow: hidden;
@@ -52,27 +61,95 @@
 .intro_wrap .wer {
     font-size: 6vw;
     margin-top: 5vh;
+    color: transparent;
+    -webkit-text-stroke: 1px #000000;
 }
 .intro_wrap .slide_txt_wrap .slide_txt {
     font-size: 9vw;
     filter: opacity(0.5) blur(15px);
     display: flex;
     align-items: center;
+    color: transparent;
+    background: linear-gradient(to right bottom, transparent, #602bff);
+    -webkit-background-clip: text;
+    animation: intro_back_change 1s ease-in Infinite Alternate;
+    transition-duration: 0.5s;
+}
+
+.intro_wrap .slide_txt_wrap .slide_txt::before {
+    background: linear-gradient(to left top, #edf3f6, #c461ee);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-33.3333333%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: opacity_change 1.5s ease-in-out Infinite Alternate;
+}
+.intro_wrap .slide_txt_wrap .slide_txt:first-child::before {
+    content: "Creative";
+    -webkit-background-clip: text;
+}
+.intro_wrap .slide_txt_wrap .slide_txt:nth-child(2)::before {
+    content: "Researching";
+    -webkit-background-clip: text;
+}
+.intro_wrap .slide_txt_wrap .slide_txt:nth-child(3)::before {
+    content: "Trend";
+    -webkit-background-clip: text;
+}
+.intro_wrap .slide_txt_wrap .slide_txt:nth-child(4)::before {
+    content: "Street Fashion";
+    -webkit-background-clip: text;
+}
+@keyframes opacity_change {
+    100% {
+        opacity: 1;
+    }
 }
 .intro_wrap .slide_txt_wrap .slide_txt.swiper-slide-active {
     filter: none;
 }
 .intro_wrap .slide_txt_wrap .slide_txt.kirsh.swiper-slide-active {
-    background: linear-gradient(to right bottom, #6c96ff, #ff4c4c);
-    color: transparent;
-    -webkit-background-clip: text;
-    text-shadow: 10px 10px 0px #000000cf;
+    color: #000000;
+    text-shadow: 0 0 3px black;
 }
 .intro_wrap .intro_cherry {
     position: absolute;
     bottom: 3vw;
     right: -6vw;
     width: 40vw;
+    opacity: 0.5;
+    filter: blur(2px);
+}
+/* 굿즈 */
+.goods_wrap {
+    background: black;
+    height: 100vh;
+    position: relative;
+}
+.goods_wrap .goods_block_backtxt {
+    position: absolute;
+    color: white;
+    z-index: 2;
+    font-size: 8vh;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
     opacity: 0.2;
-    filter: blur(5px) grayscale(1);
+}
+.goods_wrap .goods_img {
+    padding: 0 20%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.goods_wrap .goods_img img {
+    width: 100%;
+}
+
+.goods_wrap .goods_intro {
+    padding: 10%;
+    background: black;
 }

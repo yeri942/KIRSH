@@ -28,14 +28,11 @@ $(".main_warp").click(() => {
         "clip-path": "circle(100%)",
         "transition-duration": "0.5s",
     });
-    $(".main_warp").css({
-        "overflow-y": "scroll",
-    });
     $(".main_warp").off("mousemove");
     setTimeout(() => {
-        $("#content").show();
-        var offset = $("#content").offset(); //해당 위치 반환
-        $("html, body").animate({ scrollTop: offset.top }, 400);
+        $(".contentblock").show();
+        var contentoffset = $("#content").offset(); //해당 위치 반환
+        $("html, body").animate({ scrollTop: contentoffset.top }, 400);
     }, 1000);
 });
 var txtswiper = new Swiper(".txtswiper", {
