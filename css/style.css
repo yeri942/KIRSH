@@ -8,9 +8,9 @@
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
     display: none;
-} */
+}
 main {
     scroll-snap-type: y mandatory;
     height: 100vh;
@@ -99,7 +99,7 @@ main {
     -webkit-background-clip: text;
 }
 .intro_wrap .slide_txt_wrap .slide_txt:nth-child(4)::before {
-    content: "Street Fashion";
+    content: "Your Style";
     -webkit-background-clip: text;
 }
 @keyframes opacity_change {
@@ -109,10 +109,6 @@ main {
 }
 .intro_wrap .slide_txt_wrap .slide_txt.swiper-slide-active {
     filter: none;
-}
-.intro_wrap .slide_txt_wrap .slide_txt.kirsh.swiper-slide-active {
-    color: #000000;
-    text-shadow: 0 0 3px black;
 }
 .intro_wrap .intro_cherry {
     position: absolute;

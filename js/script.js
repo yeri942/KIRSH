@@ -31,8 +31,9 @@ $(".main_warp").click(() => {
     $(".main_warp").off("mousemove");
     setTimeout(() => {
         $(".contentblock").show();
-        var contentoffset = $("#content").offset(); //해당 위치 반환
-        $("html, body").animate({ scrollTop: contentoffset.top }, 400);
+        document
+            .getElementById("content")
+            .scrollIntoView({ behavior: "smooth" });
     }, 1000);
 });
 var txtswiper = new Swiper(".txtswiper", {
