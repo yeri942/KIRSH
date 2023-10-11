@@ -23,6 +23,7 @@ $(".main_warp").mousemove((e) => {
     });
 });
 
+// 메인 클릭시 이벤트
 $(".main_warp").click(() => {
     $(".main_back").css({
         "clip-path": "circle(100%)",
@@ -36,6 +37,8 @@ $(".main_warp").click(() => {
             .scrollIntoView({ behavior: "smooth" });
     }, 1000);
 });
+
+// 인트로 텍스트 슬라이더
 var txtswiper = new Swiper(".txtswiper", {
     direction: "vertical",
     slidesPerView: 2,
@@ -62,4 +65,21 @@ var txtswiper = new Swiper(".txtswiper", {
             }, 500);
         },
     },
+});
+
+// 굿즈 페이지넘김
+$(".goods_wrap").on("mousewheel", function (e) {
+    var wheel = e.originalEvent.wheelDelta;
+    if (wheel <= 0) {
+        //스크롤 내릴때
+        $(this).find(".goods_block_list").css("right", "0");
+        $(this).css("overflow", "scroll");
+    }
+});
+// 굿즈 페이지 상단 찍을 시 goods_block_list 가 다시 접히게...
+$(".goods_block_list").on("mousewheel", function () {
+    if ($(document).scrollTop() <= Math.floor($(this).offset().top) + 1) {
+        $(this).css("right", "-100%");
+        $(this).parent(".goods_wrap").css("overflow", "hidden");
+    }
 });
