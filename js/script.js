@@ -32,6 +32,8 @@ $(".main_warp").click(() => {
     $(".main_warp").off("mousemove");
     setTimeout(() => {
         $(".contentblock").show();
+        $(".contacts_kirsh_wrap").css("display", "flex");
+        $(".footer_wrap").css("display", "flex");
         document
             .getElementById("content")
             .scrollIntoView({ behavior: "smooth" });
