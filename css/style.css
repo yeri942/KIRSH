@@ -140,15 +140,6 @@ main {
     }
 }
 
-.intro_wrap .intro_cherry {
-    position: absolute;
-    bottom: 3vw;
-    right: -6vw;
-    width: 40vw;
-    opacity: 0.5;
-    filter: blur(2px);
-}
-
 /* 히스토리 */
 .contentblock.history {
     background: radial-gradient(#a57bff, #c99bf6);
@@ -503,8 +494,77 @@ main {
     left: 36%;
 }
 
-/* 키르시 서비스로 가는  */
-
+/* contacts */
+.contacts_kirsh_wrap {
+    background: linear-gradient(
+        25deg,
+        rgb(182 249 255) 0%,
+        rgb(255 185 255) 56%,
+        rgb(255 178 201) 100%
+    );
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.contacts_kirsh_wrap .contactus_block,
+.contacts_kirsh_wrap .sns_block {
+    background: rgb(172 157 255 / 15%);
+    box-shadow: 0 0px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 1vw;
+    border: 1px solid rgb(172 157 255/ 18%);
+    width: 60%;
+    padding: 3vw;
+    margin: 1vw;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    z-index: 2;
+}
+.contacts_tit {
+    border-right: 5px solid rgb(255, 255, 255);
+    padding-right: 5%;
+    margin-right: 5%;
+    width: 20%;
+    line-height: 3rem;
+}
+.contactus_txt,
+.sns_icon {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 5%;
+}
+.contactus_txt img {
+    width: 7%;
+    margin: 0 4% 0 6%;
+    filter: contrast(0) brightness(2) opacity(0.7)
+        drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.2));
+}
+.contactus_txt a {
+    color: white;
+}
+.sns_icon a {
+    margin: 0 6%;
+    width: 50%;
+}
+.sns_icon a img {
+    width: 100%;
+    filter: contrast(0) brightness(2) opacity(0.7)
+        drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.2));
+}
+.contacts_cherry {
+    position: absolute;
+    bottom: 3vw;
+    right: -6vw;
+    width: 40vw;
+    opacity: 0.5;
+    filter: blur(2px);
+}
 /* 푸터 */
 .footer_wrap {
     background-color: rgb(29, 29, 29);
