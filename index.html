@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/youtube-background@1.0.14/jquery.youtube-background.min.js"></script>
         <link rel="stylesheet" href="/css/style.css" />
         <link
             rel="stylesheet"
@@ -30,6 +31,11 @@
                 />
             </div>
             <div class="contentblock intro_wrap txtswiper" id="content">
+                <div
+                    data-vbg-autoplay="true"
+                    data-vbg="https://youtu.be/A23hGqSaTW0?si=q-xe6_drYXMO9YbO"
+                    class="intro_video"
+                ></div>
                 <div class="wer">WE ARE</div>
                 <div class="slide_txt_wrap swiper-wrapper">
                     <div class="slide_txt swiper-slide">Creative</div>
@@ -38,11 +44,11 @@
                     <div class="slide_txt swiper-slide">Your Style</div>
                     <div class="slide_txt swiper-slide"></div>
                 </div>
-                <img
+                <!-- <img
                     src="/img/intro_cherry_img.png"
                     alt="kirsh_cherry"
                     class="intro_cherry"
-                />
+                /> -->
             </div>
             <div class="contentblock goods">
                 <div class="contentblock goods_wrap">
@@ -301,9 +307,17 @@
                     </div>
                 </div>
             </div>
-            <div class="contentblock end_video_wrap"></div>
+            <div class="contentblock go_kirsh_site_wrap"></div>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="footer_wrap">
+                <img src="/img/footer_cherry.png" alt="kirsh logo" />
+                <div class="footer_txt_wrap"></div>
+                <div class="git_wrap">
+                    <a href=""></a>
+                </div>
+            </div>
+        </footer>
         <script src="/js/script.js"></script>
     </body>
 </html>

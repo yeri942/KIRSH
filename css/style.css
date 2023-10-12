@@ -63,24 +63,51 @@ main {
     overflow: hidden;
     position: relative;
 }
+.contentblock.intro_wrap::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px dashed #ffffff;
+    border-radius: 0 0 30% 0 / 0 0 60% 0;
+}
+.intro_wrap div.intro_video {
+    background-image: url(/img/intro_start.jpg) !important;
+}
+.intro_wrap div.intro_video::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #d8f4ff 25%, #ffffff59);
+}
 .intro_wrap .wer {
     font-size: 6vw;
     margin-top: 5vh;
     color: transparent;
     -webkit-text-stroke: 1px #000000;
+    z-index: 2;
+    position: relative;
 }
 .intro_wrap .slide_txt_wrap .slide_txt {
     font-size: 9vw;
-    filter: opacity(0.5) blur(15px);
+    filter: opacity(0);
     display: flex;
     align-items: center;
     color: transparent;
     background: linear-gradient(to right bottom, transparent, #602bff);
     -webkit-background-clip: text;
     animation: intro_back_change 1s ease-in Infinite Alternate;
-    transition-duration: 0.5s;
 }
-
+.intro_wrap .slide_txt_wrap .slide_txt.swiper-slide-active {
+    filter: none;
+}
+.intro_wrap .slide_txt_wrap .slide_txt.swiper-slide-next {
+    filter: opacity(0.5) blur(15px);
+}
 .intro_wrap .slide_txt_wrap .slide_txt::before {
     background: linear-gradient(to left top, #edf3f6, #c461ee);
     position: absolute;
@@ -112,9 +139,7 @@ main {
         opacity: 1;
     }
 }
-.intro_wrap .slide_txt_wrap .slide_txt.swiper-slide-active {
-    filter: none;
-}
+
 .intro_wrap .intro_cherry {
     position: absolute;
     bottom: 3vw;
@@ -353,3 +378,8 @@ main {
 /* 마지막 영상블럭 */
 
 /* 푸터 */
+.footer_wrap {
+    background-color: rgb(29, 29, 29);
+    color: white;
+    padding: 10vh 2vh;
+}
