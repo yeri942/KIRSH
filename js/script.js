@@ -83,3 +83,8 @@ $(".goods_block_list").on("mousewheel", function () {
         $(this).parent(".goods_wrap").css("overflow", "hidden");
     }
 });
+
+// 비디오블럭
+$(document).ready(function () {
+    $("[data-vbg]").youtube_background(); // 실행
+});
